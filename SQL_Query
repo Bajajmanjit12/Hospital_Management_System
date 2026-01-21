@@ -1,0 +1,17 @@
+Create DATABASE HMS_Zensar;
+USE HMS_Zensar;
+
+CREATE TABLE patient (
+    patient_id INT PRIMARY KEY AUTO_INCREMENT,
+    patient_name VARCHAR(100),
+    age INT,
+    disease VARCHAR(100),
+    doctor_id INT,
+    FOREIGN KEY (doctor_id) REFERENCES doctor(doctor_id)
+);
+
+CREATE TABLE doctor (
+    doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+    doctor_name VARCHAR(100),
+    specialization VARCHAR(100)
+);
